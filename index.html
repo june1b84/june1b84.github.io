@@ -273,6 +273,72 @@
       border: 1px dashed var(--border);
     }
 
+    .work-card-v2 {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .work-card-v2:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .work-card-v2__img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      background: var(--bg-soft);
+    }
+
+    .work-card-v2__body {
+      padding: 18px 20px;
+    }
+
+    .work-card-v2__tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: var(--accent-light, #EFF6FF);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+
+    .work-card-v2__title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .work-card-v2__desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .work-card-v2__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     /* ===== Contact ===== */
     .contact-box {
       background: var(--navy);
@@ -424,9 +490,29 @@
     <div class="divider"></div>
 
     <div class="works-grid">
-      <div class="works-coming">
-        🚧 制作事例を順次公開予定です
-      </div>
+      <a href="https://yoko-reserve.web.app/lp" class="work-card-v2" target="_blank" rel="noopener">
+        <img src="thumb-yoko.png" alt="陽子の出張エステ LP" class="work-card-v2__img" />
+        <div class="work-card-v2__body">
+          <span class="work-card-v2__tag">実事業 LP</span>
+          <h4 class="work-card-v2__title">陽子の出張エステ</h4>
+          <p class="work-card-v2__desc">出張エステサロンの集客LP。実写撮影・コピー・デザイン・コーディング・予約システムまで一貫対応。</p>
+          <div class="work-card-v2__footer">
+            <span>サイトを見る →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://aikata.hub" class="work-card-v2" target="_blank" rel="noopener">
+        <img src="thumb-aikata.png" alt="aikata.hub LP" class="work-card-v2__img" />
+        <div class="work-card-v2__body">
+          <span class="work-card-v2__tag">自社サービス LP</span>
+          <h4 class="work-card-v2__title">aikata.hub</h4>
+          <p class="work-card-v2__desc">個人クリエイター向けバックオフィスSaaSの集客LP。コンセプト設計からデザイン・実装まで自社で制作。</p>
+          <div class="work-card-v2__footer">
+            <span>サイトを見る →</span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
