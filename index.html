@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP制作 | Life is Groove — じゅんちゃん</title>
+  <meta name="description" content="事業3つをAIで回す3児のパパが作る、現場目線の集客LP。¥55,000（税込）から。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #1B2B4B;
+      --navy-light:  #2C4270;
+      --accent:      #3B82F6;
+      --warm:        #F59E0B;
+      --text:        #1F2937;
+      --muted:       #6B7280;
+      --bg:          #FFFFFF;
+      --bg-soft:     #F8FAFC;
+      --border:      #E5E7EB;
+      --radius:      12px;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 72px 20px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.12);
+      pointer-events: none;
+    }
+
+    .hero__tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 4px 16px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .hero__title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(24px, 6vw, 34px);
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero__title em {
+      font-style: normal;
+      color: #93C5FD;
+    }
+
+    .hero__sub {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 36px;
+      line-height: 1.9;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--warm);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.55);
+    }
+
+    /* ===== Section Base ===== */
+    .section { padding: 60px 0; }
+    .section--soft { background: var(--bg-soft); }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(19px, 5vw, 25px);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .divider {
+      width: 36px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    /* ===== About ===== */
+    .about-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .about-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .about-role {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .biz-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .biz-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg-soft);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .biz-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    .biz-text { font-size: 13px; line-height: 1.6; }
+    .biz-text strong {
+      display: block;
+      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .about-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.9;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    /* ===== Service ===== */
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 2px solid var(--navy);
+      overflow: hidden;
+    }
+
+    .service-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 22px 26px;
+    }
+
+    .service-header h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+
+    .service-price { font-size: 30px; font-weight: 700; color: #93C5FD; }
+    .service-price span { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.65); }
+
+    .service-body { padding: 24px 26px; }
+
+    .service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .service-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
+    .service-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .service-note {
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--bg-soft);
+      border-radius: 8px;
+      padding: 12px 14px;
+      line-height: 1.8;
+    }
+
+    /* ===== Works ===== */
+    .works-grid { display: flex; flex-direction: column; gap: 14px; }
+
+    .work-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .work-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-1px);
+    }
+
+    .work-thumb {
+      width: 64px; height: 64px;
+      border-radius: 8px;
+      background: var(--navy);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .work-info h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .work-info p  { font-size: 12px; color: var(--muted); }
+    .work-arrow   { margin-left: auto; color: var(--muted); font-size: 20px; flex-shrink: 0; }
+
+    .works-coming {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--muted);
+      font-size: 13px;
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+    }
+
+    /* ===== Contact ===== */
+    .contact-box {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 40px 28px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .contact-box h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 28px;
+      line-height: 1.9;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.8);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+
+    .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: #111827;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+    }
+
+    .footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+
+    /* ===== Smooth scroll ===== */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="container">
+    <p class="hero__tag">LP制作サービス</p>
+    <h1 class="hero__title">
+      現場を知ってるから<br>
+      <em>「売れるLP」</em>が作れる
+    </h1>
+    <p class="hero__sub">
+      Mac修理・野菜の出張販売・ペットタクシー<br>
+      3つの事業を経営しながらLPを作っています。
+    </p>
+    <a href="#contact" class="btn-primary">無料で相談してみる</a>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div class="section">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">「LP作ってます」じゃなく、<br>「自分で使ってます」</h2>
+    <div class="divider"></div>
+
+    <div class="about-card">
+      <p class="about-name">藤澤 じゅんいち（じゅんちゃん）</p>
+      <p class="about-role">Life is Groove 代表 ／ 3児のパパ</p>
+
+      <div class="biz-list">
+        <div class="biz-item">
+          <span class="biz-icon">💻</span>
+          <div class="biz-text">
+            <strong>SMART — MacBook修理</strong>
+            千葉県でMacBook修理店を経営。AIで業務を自動化済み。
+          </div>
+        </div>
+        <div class="biz-item">
+          <span class="biz-icon">🥦</span>
+          <div class="biz-text">
+            <strong>saccu nature. — 野菜の出張販売</strong>
+            自然栽培野菜の出張販売。LP経由での集客を実践中。
+          </div>
+        </div>
+        <div class="biz-item">
+          <span class="biz-icon">🚗</span>
+          <div class="biz-text">
+            <strong>chienchat — ペットタクシー</strong>
+            ペット専門タクシーの予約管理CMSをAIで内製開発。
+          </div>
+        </div>
+      </div>
+
+      <p class="about-desc">
+        3つの事業を実際に経営しながら、集客・予約・管理をAIで回しています。
+        「現場で何が刺さるか」を知っているからこそ、お客様の行動につながるLPが作れます。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SERVICE ===== -->
+<div class="section section--soft">
+  <div class="container">
+    <p class="section-label">Service</p>
+    <h2 class="section-title">LP制作プラン</h2>
+    <div class="divider"></div>
+
+    <div class="service-card">
+      <div class="service-header">
+        <h3>スターターLP</h3>
+        <div class="service-price">¥55,000 <span>（税込）</span></div>
+      </div>
+      <div class="service-body">
+        <ul class="service-list">
+          <li>ヒアリング〜デザイン〜コーディング一貫対応</li>
+          <li>スマホ最適化（レスポンシブデザイン）</li>
+          <li>コピーライティング含む</li>
+          <li>お問い合わせフォーム設置</li>
+          <li>納品後1週間の修正対応</li>
+        </ul>
+        <div class="service-note">
+          📅 納期の目安：ヒアリング後、約2〜3週間<br>
+          💬 「どんなLPが必要か分からない」でも大丈夫。業種・課題に合わせてご提案します。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WORKS ===== -->
+<div class="section">
+  <div class="container">
+    <p class="section-label">Works</p>
+    <h2 class="section-title">制作事例</h2>
+    <div class="divider"></div>
+
+    <div class="works-grid">
+      <div class="works-coming">
+        🚧 制作事例を順次公開予定です
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div class="section section--soft" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h3>まずは無料で相談してみる</h3>
+      <p>
+        業種・集客の課題をヒアリングして、最適な形をご提案します。<br>
+        お気軽にどうぞ。
+      </p>
+      <a href="https://forms.gle/XXXXXXXXXXXXXXXX" class="btn-outline" target="_blank" rel="noopener">
+        お問い合わせフォームへ
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>© 2026 Life is Groove / 藤澤 じゅんいち &nbsp;|&nbsp; <a href="https://instagram.com/life.is.groove" target="_blank" rel="noopener">Instagram</a></p>
+</footer>
+
+</body>
+</html>
