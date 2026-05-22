@@ -1,542 +1,152 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LP制作 | Life is Groove — じゅんちゃん</title>
-  <meta name="description" content="事業3つをAIで回す3児のパパが作る、現場目線の集客LP。¥55,000（税込）から。">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life is Groove | LP制作</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:        #1B2B4B;
-      --navy-light:  #2C4270;
-      --accent:      #3B82F6;
-      --warm:        #F59E0B;
-      --text:        #1F2937;
-      --muted:       #6B7280;
-      --bg:          #FFFFFF;
-      --bg-soft:     #F8FAFC;
-      --border:      #E5E7EB;
-      --radius:      12px;
-    }
-
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: var(--navy);
-      color: #fff;
-      padding: 72px 20px 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: rgba(59, 130, 246, 0.12);
-      pointer-events: none;
-    }
-
-    .hero__tag {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
-      padding: 4px 16px;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      margin-bottom: 24px;
-    }
-
-    .hero__title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(24px, 6vw, 34px);
-      font-weight: 700;
-      line-height: 1.5;
-      letter-spacing: 0.02em;
-      margin-bottom: 16px;
-    }
-
-    .hero__title em {
-      font-style: normal;
-      color: #93C5FD;
-    }
-
-    .hero__sub {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.72);
-      margin-bottom: 36px;
-      line-height: 1.9;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--warm);
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 16px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.55);
-    }
-
-    /* ===== Section Base ===== */
-    .section { padding: 60px 0; }
-    .section--soft { background: var(--bg-soft); }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(19px, 5vw, 25px);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
-
-    .divider {
-      width: 36px;
-      height: 3px;
-      background: var(--accent);
-      margin-bottom: 28px;
-    }
-
-    /* ===== About ===== */
-    .about-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 28px;
-      border: 1px solid var(--border);
-    }
-
-    .about-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .about-role {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .biz-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .biz-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background: var(--bg-soft);
-      border-radius: 8px;
-      padding: 12px 14px;
-    }
-
-    .biz-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-
-    .biz-text { font-size: 13px; line-height: 1.6; }
-    .biz-text strong {
-      display: block;
-      font-size: 14px;
-      color: var(--navy);
-      margin-bottom: 2px;
-    }
-
-    .about-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.9;
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
-
-    /* ===== Service ===== */
-    .service-card {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 2px solid var(--navy);
-      overflow: hidden;
-    }
-
-    .service-header {
-      background: var(--navy);
-      color: #fff;
-      padding: 22px 26px;
-    }
-
-    .service-header h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-
-    .service-price { font-size: 30px; font-weight: 700; color: #93C5FD; }
-    .service-price span { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.65); }
-
-    .service-body { padding: 24px 26px; }
-
-    .service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-    .service-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
-    .service-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-    .service-note {
-      font-size: 12px;
-      color: var(--muted);
-      background: var(--bg-soft);
-      border-radius: 8px;
-      padding: 12px 14px;
-      line-height: 1.8;
-    }
-
-    /* ===== Works ===== */
-    .works-grid { display: flex; flex-direction: column; gap: 14px; }
-
-    .work-card {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: inherit;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .work-card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      transform: translateY(-1px);
-    }
-
-    .work-thumb {
-      width: 64px; height: 64px;
-      border-radius: 8px;
-      background: var(--navy);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-    }
-
-    .work-info h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
-    .work-info p  { font-size: 12px; color: var(--muted); }
-    .work-arrow   { margin-left: auto; color: var(--muted); font-size: 20px; flex-shrink: 0; }
-
-    .works-coming {
-      text-align: center;
-      padding: 32px 20px;
-      color: var(--muted);
-      font-size: 13px;
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      border: 1px dashed var(--border);
-    }
-
-    .work-card-v2 {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .work-card-v2:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
-      transform: translateY(-2px);
-    }
-
-    .work-card-v2__img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      background: var(--bg-soft);
-    }
-
-    .work-card-v2__body {
-      padding: 18px 20px;
-    }
-
-    .work-card-v2__tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      background: var(--accent-light, #EFF6FF);
-      border-radius: 4px;
-      padding: 2px 8px;
-      margin-bottom: 8px;
-    }
-
-    .work-card-v2__title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .work-card-v2__desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .work-card-v2__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* ===== Contact ===== */
-    .contact-box {
-      background: var(--navy);
-      border-radius: var(--radius);
-      padding: 40px 28px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .contact-box h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .contact-box p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 28px;
-      line-height: 1.9;
-    }
-
-    .btn-outline {
-      display: inline-block;
-      border: 2px solid rgba(255,255,255,0.8);
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 14px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: background 0.2s;
-    }
-
-    .btn-outline:hover { background: rgba(255,255,255,0.12); }
-
-    /* ===== Footer ===== */
-    .footer {
-      background: #111827;
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      padding: 24px 20px;
-      font-size: 12px;
-    }
-
-    .footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
-
-    /* ===== Smooth scroll ===== */
-    html { scroll-behavior: smooth; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <a class="logo" href="#">
+      <span>Life is Groove</span>
+      <small>by June</small>
+    </a>
+    <nav>
+      <a href="#service">サービス</a>
+      <a href="#works">制作実績</a>
+      <a href="#price">料金プラン</a>
+      <a href="#flow">制作の流れ</a>
+      <a href="#voice">お客様の声</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <a class="header-cta" href="#contact">無料で相談する</a>
+  </header>
 
-<!-- ===== HERO ===== -->
-<div class="hero">
-  <div class="container">
-    <p class="hero__tag">LP制作サービス</p>
-    <h1 class="hero__title">
-      現場を知ってるから<br>
-      <em>「売れるLP」</em>が作れる
-    </h1>
-    <p class="hero__sub">
-      Mac修理・野菜の出張販売・ペットタクシー<br>
-      3つの事業を経営しながらLPを作っています。
-    </p>
-    <a href="#contact" class="btn-primary">無料で相談してみる</a>
-  </div>
-</div>
-
-<!-- ===== ABOUT ===== -->
-<div class="section">
-  <div class="container">
-    <p class="section-label">About</p>
-    <h2 class="section-title">「LP作ってます」じゃなく、<br>「自分で使ってます」</h2>
-    <div class="divider"></div>
-
-    <div class="about-card">
-      <p class="about-name">藤澤 じゅんいち（じゅんちゃん）</p>
-      <p class="about-role">Life is Groove 代表 ／ 3児のパパ</p>
-
-      <div class="biz-list">
-        <div class="biz-item">
-          <span class="biz-icon">💻</span>
-          <div class="biz-text">
-            <strong>SMART — MacBook修理</strong>
-            千葉県でMacBook修理店を経営。AIで業務を自動化済み。
-          </div>
-        </div>
-        <div class="biz-item">
-          <span class="biz-icon">🥦</span>
-          <div class="biz-text">
-            <strong>saccu nature. — 野菜の出張販売</strong>
-            自然栽培野菜の出張販売。LP経由での集客を実践中。
-          </div>
-        </div>
-        <div class="biz-item">
-          <span class="biz-icon">🚗</span>
-          <div class="biz-text">
-            <strong>chienchat — ペットタクシー</strong>
-            ペット専門タクシーの予約管理CMSをAIで内製開発。
-          </div>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">あなたの想いを、伝わるカタチに。</p>
+        <h1>集客と売上をつくる<br>LP制作ならお任せください</h1>
+        <p class="lead">
+          個人事業主・お店のオーナーさまの「想い」や「こだわり」を、
+          伝わるLPに。デザインから構成・ライティングまで一貫してサポートします。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">LINEで無料相談する<span>お気軽にご相談ください</span></a>
+          <a class="btn secondary" href="mailto:info@example.com">メールで相談する<span>24時間受付中</span></a>
         </div>
       </div>
 
-      <p class="about-desc">
-        3つの事業を実際に経営しながら、集客・予約・管理をAIで回しています。
-        「現場で何が刺さるか」を知っているからこそ、お客様の行動につながるLPが作れます。
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- ===== SERVICE ===== -->
-<div class="section section--soft">
-  <div class="container">
-    <p class="section-label">Service</p>
-    <h2 class="section-title">LP制作プラン</h2>
-    <div class="divider"></div>
-
-    <div class="service-card">
-      <div class="service-header">
-        <h3>スターターLP</h3>
-        <div class="service-price">¥55,000 <span>（税込）</span></div>
-      </div>
-      <div class="service-body">
-        <ul class="service-list">
-          <li>ヒアリング〜デザイン〜コーディング一貫対応</li>
-          <li>スマホ最適化（レスポンシブデザイン）</li>
-          <li>コピーライティング含む</li>
-          <li>お問い合わせフォーム設置</li>
-          <li>納品後1週間の修正対応</li>
-        </ul>
-        <div class="service-note">
-          📅 納期の目安：ヒアリング後、約2〜3週間<br>
-          💬 「どんなLPが必要か分からない」でも大丈夫。業種・課題に合わせてご提案します。
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== WORKS ===== -->
-<div class="section">
-  <div class="container">
-    <p class="section-label">Works</p>
-    <h2 class="section-title">制作事例</h2>
-    <div class="divider"></div>
-
-    <div class="works-grid">
-      <a href="https://yoko-reserve.web.app/lp" class="work-card-v2" target="_blank" rel="noopener">
-        <img src="thumb-yoko.png" alt="陽子の出張エステ LP" class="work-card-v2__img" />
-        <div class="work-card-v2__body">
-          <span class="work-card-v2__tag">実事業 LP</span>
-          <h4 class="work-card-v2__title">陽子の出張エステ</h4>
-          <p class="work-card-v2__desc">出張エステサロンの集客LP。実写撮影・コピー・デザイン・コーディング・予約システムまで一貫対応。</p>
-          <div class="work-card-v2__footer">
-            <span>サイトを見る →</span>
+      <div class="hero-visual">
+        <div class="mock-browser">
+          <div class="mock-bar"></div>
+          <div class="mock-screen">
+            <div class="badge">自宅で受けられる出張ケア</div>
+            <h2>カラダめぐりセラピスト<br><b>YOKO</b></h2>
+            <p>心と体に寄り添う、オーダーメイドの出張エステ</p>
+            <div class="mock-buttons"><span></span><span></span></div>
           </div>
         </div>
-      </a>
+      </div>
+    </section>
 
-      <a href="https://aikata.hub" class="work-card-v2" target="_blank" rel="noopener">
-        <img src="thumb-aikata.png" alt="aikata.hub LP" class="work-card-v2__img" />
-        <div class="work-card-v2__body">
-          <span class="work-card-v2__tag">自社サービス LP</span>
-          <h4 class="work-card-v2__title">aikata.hub</h4>
-          <p class="work-card-v2__desc">個人クリエイター向けバックオフィスSaaSの集客LP。コンセプト設計からデザイン・実装まで自社で制作。</p>
-          <div class="work-card-v2__footer">
-            <span>サイトを見る →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
+    <section class="problem card">
+      <h2>こんなお悩みありませんか？</h2>
+      <div class="problem-grid">
+        <div><span>♧</span><p>集客につながるLPが<br>欲しいけど作り方がわからない</p></div>
+        <div><span>▣</span><p>自分のサービスの魅力を<br>うまく伝えられない</p></div>
+        <div><span>✎</span><p>文章やデザインを考える<br>時間がない</p></div>
+        <div><span>▥</span><p>LPを作ったけど<br>反応がイマイチだった</p></div>
+      </div>
+    </section>
 
-<!-- ===== CONTACT ===== -->
-<div class="section section--soft" id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <h3>まずは無料で相談してみる</h3>
-      <p>
-        業種・集客の課題をヒアリングして、最適な形をご提案します。<br>
-        お気軽にどうぞ。
-      </p>
-      <a href="https://forms.gle/XXXXXXXXXXXXXXXX" class="btn-outline" target="_blank" rel="noopener">
-        お問い合わせフォームへ
-      </a>
-    </div>
-  </div>
-</div>
+    <section id="works" class="works">
+      <p class="section-en">WORKS</p>
+      <h2>制作実績</h2>
+      <div class="works-grid">
+        <article class="work-card">
+          <div class="thumb yoko"><span>YOKO</span></div>
+          <p>エステサロン</p><h3>カラダめぐりセラピスト YOKO様</h3>
+        </article>
+        <article class="work-card">
+          <div class="thumb aikata"><span>AIKATA.hub</span></div>
+          <p>クリエイターツール</p><h3>AIKATA.hub様</h3>
+        </article>
+        <article class="work-card">
+          <div class="thumb veggie"><span>野菜メディア</span></div>
+          <p>野菜ブログメディア</p><h3>からだとつち様</h3>
+        </article>
+        <article class="work-card">
+          <div class="thumb cms"><span>Salon CMS</span></div>
+          <p>サロン管理ツール</p><h3>サロンCMS様</h3>
+        </article>
+        <article class="work-card">
+          <div class="thumb fansapo"><span>ファンサポ</span></div>
+          <p>運用サポートサービス</p><h3>ファンサポ様</h3>
+        </article>
+      </div>
+      <a class="more" href="#">もっと見る</a>
+    </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <p>© 2026 Life is Groove / 藤澤 じゅんいち &nbsp;|&nbsp; <a href="https://instagram.com/life.is.groove" target="_blank" rel="noopener">Instagram</a></p>
-</footer>
+    <section id="service" class="reason card">
+      <p class="section-en">WHY CHOOSE ME?</p>
+      <h2>Life is Grooveが選ばれる理由</h2>
+      <div class="reason-grid">
+        <div><span>♡</span><h3>想いをカタチにする<br>ヒアリング力</h3><p>丁寧にヒアリングし、あなたの想いや強みを引き出します。</p></div>
+        <div><span>✎</span><h3>デザイン・構成・文章まで<br>一貫対応</h3><p>全部まとめてお任せOK。伝わるLPを一貫して制作します。</p></div>
+        <div><span>▯</span><h3>スマホでも見やすく<br>集客に強い設計</h3><p>スマホ最適化・SEO・導線設計までしっかり対応します。</p></div>
+        <div><span>◷</span><h3>小回りのきく<br>個人対応</h3><p>やりとりが早く、修正も柔軟に対応します。</p></div>
+      </div>
+    </section>
 
+    <section id="flow" class="flow">
+      <h2>制作の流れ</h2>
+      <div class="flow-grid">
+        <div class="flow-card"><b>01</b><span>◯</span><h3>ヒアリング</h3><p>ご要望や目的を丁寧にお伺いします。</p></div>
+        <div class="flow-card"><b>02</b><span>⌕</span><h3>ご提案・お見積り</h3><p>構成案とお見積りをご提示します。</p></div>
+        <div class="flow-card"><b>03</b><span>▭</span><h3>制作</h3><p>デザイン・ライティング・コーディングを行います。</p></div>
+        <div class="flow-card"><b>04</b><span>✓</span><h3>ご確認・修正</h3><p>ご確認いただき、修正対応します。</p></div>
+        <div class="flow-card"><b>05</b><span>✈</span><h3>公開・納品</h3><p>テスト確認後、公開・納品します。</p></div>
+      </div>
+    </section>
+
+    <section id="voice" class="voice card">
+      <h2>お客様の声</h2>
+      <div class="voice-grid">
+        <article>
+          <div class="avatar"></div>
+          <p class="role">エステサロンオーナー</p>
+          <h3>YOKO 様</h3>
+          <p>とても丁寧にヒアリングしていただき、サロンの世界観がそのままLPに反映されました。</p>
+        </article>
+        <article>
+          <div class="avatar man"></div>
+          <p class="role">野菜農家・ブロガー</p>
+          <h3>まさと 様</h3>
+          <p>文章の提案も的確で、自分では思いつかない切り口で魅力を伝えてくれました。</p>
+        </article>
+        <article>
+          <div class="avatar man2"></div>
+          <p class="role">ペットタクシー運営</p>
+          <h3>じゅんちゃん 様</h3>
+          <p>忙しい中でもスムーズにやりとりができて、安心してお任せできました。</p>
+        </article>
+      </div>
+      <small>※個人の感想であり、成果を保証するものではありません。</small>
+    </section>
+
+    <section id="contact" class="cta">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>あなたのサービスの魅力を、しっかり届けるお手伝いをします。</p>
+      <div class="hero-actions center">
+        <a class="btn primary" href="#">LINEで無料相談する<span>お気軽にご相談ください</span></a>
+        <a class="btn secondary" href="mailto:info@example.com">メールで相談する<span>24時間受付中</span></a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
